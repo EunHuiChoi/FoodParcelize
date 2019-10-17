@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ShowImgActivity extends AppCompatActivity {
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_showimg);
@@ -15,16 +16,21 @@ public class ShowImgActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        int burgerKey = intent.getIntExtra("BurgerKey",1);
-        int pancakeKey = intent.getIntExtra("PancakeKey",0);
+        int number = intent.getIntExtra("FoodKey", 0);
 
-        if (burgerKey == 1) {
-            image.setImageResource(R.drawable.burger);
+        switch (number) {
+            case 0:
+                image.setImageResource(R.drawable.pancakes);
+                break;
+            case 1:
+                image.setImageResource(R.drawable.burger);
+                break;
+            case 2:
+                image.setImageResource(R.drawable.salad);
+                break;
+            case 3:
+                image.setImageResource(R.drawable.sandwich);
+                break;
         }
-
-        if (pancakeKey == 0) {
-            image.setImageResource(R.drawable.pancakes);
-        }
-
     }
 }
