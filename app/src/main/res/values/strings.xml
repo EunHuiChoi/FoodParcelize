@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FoodParcels</string>
+    <string name="pancakes_intro">Everyday I eat pancakes</string>
+    <string name="burger_intro">I really love to go Bettys Burger</string>
+    <string name="salad_intro">I eat salad for my health</string>
+    <string name="sandwich_intro">Subway cookies are my favorite</string>
 </resources>

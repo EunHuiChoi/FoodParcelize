@@ -11,4 +11,12 @@
         android:layout_height="380dp"
         android:scaleType="fitXY" />
 
+    <TextView
+        android:id="@+id/foodTextView"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
 </LinearLayout>
