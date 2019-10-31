@@ -4,71 +4,124 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    Food pancake = new Food("Pancake", "www.google.com", "My favorite", "2018-08-28","eun95828@gmail.com",5f);
+    Food burger = new Food("Burger", "www.naver.com", "Betty's Burger","2001-01-11","iamehchoi@gmail.com",3f);
+    Food salad = new Food("Salad", "www.daum.net", "Healthy Food","2019-10-13","sji089@naver.com",1f);
+    Food sandwich = new Food("Sandwich", "www.stacoverflow.com", "Club Sandwich","2014-12-02","github@likelion.org",4f);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        View pancakeView = findViewById(R.id.pancakeView);
-        View burgerView = findViewById(R.id.burgerView);
-        View saladView = findViewById(R.id.saladView);
-        View sandwichView = findViewById(R.id.sandwichView);
+        TextView pancakeName = findViewById(R.id.pancakeTextView);
+        pancakeName.setText(pancake.getName());
+        TextView pancakeDate = findViewById(R.id.pancakeDate);
+        pancakeDate.setText(pancake.getDate());
 
-        pancakeView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int number;
+        TextView burgerName = findViewById(R.id.burgerTextView);
+        burgerName.setText(burger.getName());
+        TextView burgerDate = findViewById(R.id.burgerDate);
+        burgerDate.setText(burger.getDate());
 
-                Intent i = new Intent(getApplicationContext(), ShowImgActivity.class);
-                number = 0;
-                i.putExtra("FoodKey", number);
+        TextView saladName = findViewById(R.id.saladTextView);
+        saladName.setText(salad.getName());
+        TextView saladDate = findViewById(R.id.saladDate);
+        saladDate.setText(salad.getDate());
 
-                startActivity(i);
-            }
-        });
+        TextView sandwichName = findViewById(R.id.sandwichTextView);
+        sandwichName.setText(sandwich.getName());
+        TextView sandwichDate = findViewById(R.id.sandwichDate);
+        sandwichDate.setText(sandwich.getDate());
+    }
 
-        burgerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int number;
+    public void onPancakeBtn(View v) {
+        Intent i = new Intent(getApplicationContext(), ShowImgActivity.class);
+        i.putExtra("FOOD", pancake);
+        startActivityForResult(i, 0);
+    }
 
-                Intent i = new Intent(getApplicationContext(), ShowImgActivity.class);
-                number = 1;
-                i.putExtra("FoodKey",number);
+    public void onBurgerBtn(View V) {
+        Intent i = new Intent(getApplicationContext(), ShowImgActivity.class);
+        i.putExtra("FOOD", burger);
+        startActivityForResult(i, 1);
+    }
 
-                startActivity(i);
-            }
-        });
+    public void onSaladBtn(View V) {
+        Intent i = new Intent(getApplicationContext(), ShowImgActivity.class);
+        i.putExtra("FOOD", salad);
+        startActivityForResult(i, 2);
+    }
 
-        saladView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int number;
+    public void onSandwichBtn(View V) {
+        Intent i = new Intent(getApplicationContext(), ShowImgActivity.class);
+        i.putExtra("FOOD", sandwich);
+        startActivityForResult(i, 3);
+    }
 
-                Intent i = new Intent(getApplicationContext(), ShowImgActivity.class);
-                number = 2;
-                i.putExtra("FoodKey",number);
+    protected void onActivityResult (int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                if (intent == null) {
+                    Log.i("INTENT", "Intent empty");
+                } else {
+                    pancake = intent.getParcelableExtra("FoodData");
+                    TextView pancakeName = findViewById(R.id.pancakeTextView);
+                    pancakeName.setText(pancake.getName());
+                    TextView pancakeDate = findViewById(R.id.pancakeDate);
+                    pancakeDate.setText(pancake.getDate());
+                }
+            } else Log.i("INTENT", "Result not okay");
+        } else Log.i("INTENT", "Code does not match");
 
-                startActivity(i);
-            }
-        });
+        if(requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                if (intent == null) {
+                    Log.i("INTENT", "Intent empty");
+                } else {
+                    burger = intent.getParcelableExtra("FoodData");
+                    TextView burgerName = findViewById(R.id.burgerTextView);
+                    burgerName.setText(burger.getName());
+                    TextView burgerDate = findViewById(R.id.burgerDate);
+                    burgerDate.setText(burger.getDate());
+                }
+            } else Log.i("INTENT", "Result not okay");
+        } else Log.i("INTENT", "Code does not match");
 
-        sandwichView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int number;
+        if(requestCode == 2) {
+            if (resultCode == RESULT_OK) {
+                if (intent == null) {
+                    Log.i("INTENT", "Intent empty");
+                } else {
+                    salad = intent.getParcelableExtra("FoodData");
+                    TextView saladName = findViewById(R.id.saladTextView);
+                    saladName.setText(salad.getName());
+                    TextView saladDate = findViewById(R.id.saladDate);
+                    saladDate.setText(salad.getDate());
+                }
+            } else Log.i("INTENT", "Result not okay");
+        } else Log.i("INTENT", "Code does not match");
 
-                Intent i = new Intent(getApplicationContext(), ShowImgActivity.class);
-                number = 3;
-                i.putExtra("FoodKey",number);
-
-                startActivity(i);
-            }
-        });
+        if(requestCode == 3) {
+            if (resultCode == RESULT_OK) {
+                if (intent == null) {
+                    Log.i("INTENT", "Intent empty");
+                } else {
+                    sandwich = intent.getParcelableExtra("FoodData");
+                    TextView sandwichName = findViewById(R.id.sandwichTextView);
+                    sandwichName.setText(sandwich.getName());
+                    TextView sandwichDate = findViewById(R.id.sandwichDate);
+                    sandwichDate.setText(sandwich.getDate());
+                }
+            } else Log.i("INTENT", "Result not okay");
+        } else Log.i("INTENT", "Code does not match");
     }
 
 }

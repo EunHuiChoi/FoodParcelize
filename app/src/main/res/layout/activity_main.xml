@@ -18,6 +18,7 @@ android:layout_centerHorizontal="true" >
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_margin="8dp"
+                android:onClick="onPancakeBtn"
                 android:src="@drawable/pancakes" />
 
             <ImageView
@@ -25,7 +26,55 @@ android:layout_centerHorizontal="true" >
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_margin="8dp"
+                android:onClick="onBurgerBtn"
                 android:src="@drawable/burger" />
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/pancakeTextView"
+                android:layout_width="180dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:onClick="onPancakeBtn"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/burgerTextView"
+                android:layout_width="180dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:onClick="onBurgerBtn"
+                android:gravity="center"/>
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/pancakeDate"
+                android:layout_height="wrap_content"
+                android:layout_width="180dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:textSize="20dp"
+                android:onClick="onPancakeBtn"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/burgerDate"
+                android:layout_width="180dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:textSize="20dp"
+                android:onClick="onBurgerBtn"
+                android:gravity="center"/>
 
         </TableRow>
 
@@ -36,6 +85,7 @@ android:layout_centerHorizontal="true" >
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_margin="8dp"
+                android:onClick="onSaladBtn"
                 android:src="@drawable/salad" />
 
             <ImageView
@@ -43,7 +93,54 @@ android:layout_centerHorizontal="true" >
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_margin="8dp"
+                android:onClick="onSandwichBtn"
                 android:src="@drawable/sandwich" />
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/saladTextView"
+                android:layout_width="180dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:onClick="onSaladBtn"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/sandwichTextView"
+                android:layout_width="180dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:onClick="onSandwichBtn"
+                android:gravity="center"/>
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/saladDate"
+                android:layout_width="180dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:textSize="20dp"
+                android:onClick="onSaladBtn"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/sandwichDate"
+                android:layout_width="180dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:textSize="20dp"
+                android:onClick="onSandwichBtn"
+                android:gravity="center"/>
 
         </TableRow>
 
