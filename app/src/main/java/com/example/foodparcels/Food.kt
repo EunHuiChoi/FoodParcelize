@@ -2,7 +2,6 @@ package com.example.foodparcels
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
-import java.util.*
 
 @Parcelize
 data class Food(val name:String,

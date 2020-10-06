@@ -33,7 +33,7 @@
 
         <EditText
             android:id="@+id/keywords"
-            style="@style/MyEditTextStyle"  />
+            style="@style/MyEditTextStyle" />
 
         <TextView
             style="@style/MyTextViewStyle"
